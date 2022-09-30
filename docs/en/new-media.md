@@ -434,6 +434,16 @@ Provides a better reading experience (full text articles) over the official one.
 
 </RouteEn>
 
+## Kuwait Local
+
+### Latest News
+
+<RouteEn author="TonyRL" example="/kuwaitlocal" path="/kuwaitlocal" radar="1" rssbud="1"/>
+
+### Categorised News
+
+<RouteEn author="TonyRL" example="/kuwaitlocal/article" path="/kuwaitlocal/:category?" :paramsDesc="['Category name, can be found in URL, `latest` by default']" radar="1" rssbud="1"/>
+
 ## Letterboxd
 
 ### User diary
@@ -751,6 +761,8 @@ Compared to the official one, this feed:
 <RouteEn author="nczitzk" example="/partnershiponai/resources" path="/partnershiponai/resources"/>
 
 ## The Verge
+
+### The Verge
 
 <RouteEn author="HenryQW" example="/verge" path="/verge">
 
