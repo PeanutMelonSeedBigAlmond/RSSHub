@@ -50,7 +50,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Extract Docker metadata (ordinary version)
+      - name: Extract Docker metadata
         id: meta-ordinary
         uses: docker/metadata-action@v4
         with:
@@ -60,31 +60,11 @@ jobs:
             type=raw,value={{date 'YYYY-MM-DD'}},enable=true
           flavor: latest=false
 
-      - name: Build and push Docker image (ordinary version)
+      - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
           context: .
           push: true
           tags: ${{ steps.meta-ordinary.outputs.tags }}
           labels: ${{ steps.meta-ordinary.outputs.labels }}
-          platforms: linux/amd64,linux/arm/v7,linux/arm64
-
-      - name: Extract Docker metadata (Chromium-bundled version)
-        id: meta-chromium-bundled
-        uses: docker/metadata-action@v4
-        with:
-          images: ${{ secrets.DOCKER_REGISTRY }}/gitsync/rsshub/rsshub
-          tags: |
-            type=raw,value=chromium-bundled,enable=true
-            type=raw,value=chromium-bundled-{{date 'YYYY-MM-DD'}},enable=true
-          flavor: latest=false
-
-      - name: Build and push Docker image (Chromium-bundled version)
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          build-args: PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=0
-          push: true
-          tags: ${{ steps.meta-chromium-bundled.outputs.tags }}
-          labels: ${{ steps.meta-chromium-bundled.outputs.labels }}
           platforms: linux/amd64,linux/arm/v7,linux/arm64
