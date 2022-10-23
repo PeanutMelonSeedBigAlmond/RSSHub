@@ -365,6 +365,10 @@ Sources
 
 </Route>
 
+### 关注的更新
+
+<Route author="PeanutMelonSeedBigAlmond" example="/kemono/posts" path="/kemono/postsfollow"/>
+
 ## lovelive-anime
 
 ### Love Live 官网最新 News
