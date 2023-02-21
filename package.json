@@ -102,6 +102,7 @@
     "crypto-js": "4.1.1",
     "currency-symbol-map": "5.1.0",
     "dayjs": "1.11.7",
+    "difflib": "https://github.com/postlight/difflib.js.git#32e8e38c7fcd935241b9baab71bb432fd9b166ed",
     "dotenv": "16.0.3",
     "emailjs-imap-client": "3.1.0",
     "entities": "3.0.1",
